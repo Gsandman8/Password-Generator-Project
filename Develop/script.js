@@ -62,12 +62,9 @@ function getPasswordLength() {
         }
       }
       //case for all but lowercase
-      else if(charTypes.includes('lowercase')&&charTypes.includes('uppercase')&&charTypes.includes('numbers')&&charTypes.includes('special characters')){
-        let typeCounter = Math.random()*4;
-        if(typeCounter>3){
-          password = password.concat(letters[Math.floor(Math.random()*letters.length)])
-        }
-        else if(typeCounter>2){
+      else if(charTypes.includes('uppercase')&&charTypes.includes('numbers')&&charTypes.includes('special characters')){
+        let typeCounter = Math.random()*3;
+        if(typeCounter>2){
           password = password.concat(letters[Math.floor(Math.random()*letters.length)].toUpperCase())
         }
         else if(typeCounter>1){
@@ -78,13 +75,10 @@ function getPasswordLength() {
         }
       }
       //case for all but uppercase
-      else if(charTypes.includes('lowercase')&&charTypes.includes('uppercase')&&charTypes.includes('numbers')&&charTypes.includes('special characters')){
-        let typeCounter = Math.random()*4;
-        if(typeCounter>3){
+      else if(charTypes.includes('lowercase')&&charTypes.includes('numbers')&&charTypes.includes('special characters')){
+        let typeCounter = Math.random()*3;
+        if(typeCounter>2){
           password = password.concat(letters[Math.floor(Math.random()*letters.length)])
-        }
-        else if(typeCounter>2){
-          password = password.concat(letters[Math.floor(Math.random()*letters.length)].toUpperCase())
         }
         else if(typeCounter>1){
           password = password.concat(numbers[Math.floor(Math.random()*numbers.length)])
@@ -94,35 +88,29 @@ function getPasswordLength() {
         }
       }
       //case for all but numbers
-      else if(charTypes.includes('lowercase')&&charTypes.includes('uppercase')&&charTypes.includes('numbers')&&charTypes.includes('special characters')){
-        let typeCounter = Math.random()*4;
-        if(typeCounter>3){
+      else if(charTypes.includes('lowercase')&&charTypes.includes('uppercase')&&charTypes.includes('special characters')){
+        let typeCounter = Math.random()*3;
+        if(typeCounter>2){
           password = password.concat(letters[Math.floor(Math.random()*letters.length)])
         }
-        else if(typeCounter>2){
-          password = password.concat(letters[Math.floor(Math.random()*letters.length)].toUpperCase())
-        }
         else if(typeCounter>1){
-          password = password.concat(numbers[Math.floor(Math.random()*numbers.length)])
+          password = password.concat(letters[Math.floor(Math.random()*letters.length)].toUpperCase())
         }
         else if(typeCounter>0){
           password = password.concat(specialChars[Math.floor(Math.random()*specialChars.length)])
         }
       }
       //case for all but special characters
-      else if(charTypes.includes('lowercase')&&charTypes.includes('uppercase')&&charTypes.includes('numbers')&&charTypes.includes('special characters')){
-        let typeCounter = Math.random()*4;
-        if(typeCounter>3){
+      else if(charTypes.includes('lowercase')&&charTypes.includes('uppercase')&&charTypes.includes('numbers')){
+        let typeCounter = Math.random()*3;
+        if(typeCounter>2){
           password = password.concat(letters[Math.floor(Math.random()*letters.length)])
         }
-        else if(typeCounter>2){
+        else if(typeCounter>1){
           password = password.concat(letters[Math.floor(Math.random()*letters.length)].toUpperCase())
         }
-        else if(typeCounter>1){
-          password = password.concat(numbers[Math.floor(Math.random()*numbers.length)])
-        }
         else if(typeCounter>0){
-          password = password.concat(specialChars[Math.floor(Math.random()*specialChars.length)])
+          password = password.concat(numbers[Math.floor(Math.random()*numbers.length)])
         }
       }
       //case for lower and upper

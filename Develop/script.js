@@ -11,13 +11,18 @@ function writePassword() {
 }
 
 function getPasswordLength() {
-  const passwordLength = prompt("How long would you like your password? (8-128 characters)");
-    if (passwordLength < 8 || passwordLength > 128 || typeof(passwordLength) != "number"){
+  let passwordLength = prompt("How long would you like your password? (8-128 characters)");
+  let isNum = /^\d+$/.test(passwordLength);
+    if (passwordLength < 8 || passwordLength > 128||isNum === false){
+      console.log(typeof(passwordLength));
       alert("Please enter a valid password length.");
-      getPasswordLength();
+      return getPasswordLength();
     }
     else {
+      console.log(typeof(passwordLength));
+      console.log(passwordLength)
       return passwordLength;
+      
     }
 }
   
@@ -31,7 +36,7 @@ function getPasswordLength() {
   }
     if(!charTypes.includes("lowercase") && !charTypes.includes("uppercase") && !charTypes.includes("numbers") && !charTypes.includes("special characters")) {
       alert("Please enter valid character options.");
-      getPasswordTypes();
+      return getPasswordTypes();
       }
     else{
       return charTypes;

@@ -27,6 +27,7 @@ function getPasswordLength() {
   console.log(charTypes);
   for(let i=0; i<charTypes.length; i++){
     charTypes[i] = charTypes[i].toLowerCase();
+    charTypes[i] = charTypes[i].trim();
   }
     if(!charTypes.includes("lowercase") && !charTypes.includes("uppercase") && !charTypes.includes("numbers") && !charTypes.includes("special characters")) {
       alert("Please enter valid character options.");
@@ -156,7 +157,7 @@ function getPasswordLength() {
       //case for upper and special
       else if(charTypes.includes('uppercase')&&charTypes.includes('special characters')){
         let typeCounter = Math.random()*2;
-        if(typeCounter>2){
+        if(typeCounter>1){
           password = password.concat(letters[Math.floor(Math.random()*letters.length)].toUpperCase())
         }
         else if(typeCounter>0){

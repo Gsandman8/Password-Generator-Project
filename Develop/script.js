@@ -12,7 +12,7 @@ function writePassword() {
 
 function getPasswordLength() {
   const passwordLength = prompt("How long would you like your password? (8-128 characters)");
-    if (passwordLength < 8 || passwordLength > 128){
+    if (passwordLength < 8 || passwordLength > 128 || typeof(passwordLength) != "number"){
       alert("Please enter a valid password length.");
       getPasswordLength();
     }
